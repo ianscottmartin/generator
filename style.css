@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: papyrus, "Roboto", sans-serif; /* Updated font family */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #3b1488;
+}
+
+.container {
+  max-width: 800px; /* Adjusted max-width */
+  margin: 20px auto; /* Added margin to center container */
+  padding: 20px;
+  text-align: center;
+  background-color: #e0eb43; /* Added background color for clarity */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for container */
+}
+
+#imagePreviewContainer {
+  margin-bottom: 20px;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: rgb(89, 48, 178);
+}
+
+#imagePreview {
+  max-width: 100%; /* Ensure image preview scales with container */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;
+  max-height: calc(
+    100vh - 300px
+  ); /* Adjusted max-height to fit within viewport */
+}
+
+form {
+  margin-bottom: 20px;
+  background-color: #e0eb43;
+}
+
+#memeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* background-color: #3b1488; */
+  justify-content: center;
+}
+
+.meme-container-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Added margin bottom for spacing between memes */
+}
+
+.meme {
+  position: relative; /* Ensure relative positioning for child elements */
+  max-width: 100%;
+  max-height: 300px; /* Adjusted maximum height for memes */
+  overflow: hidden;
+  border: 1px solid #191818;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.meme img {
+  max-width: 100%;
+  height: auto;
+}
+
+.top-text,
+.bottom-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 16px; /* Adjusted font size for meme texts */
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  pointer-events: none;
+  z-index: 10; /* Ensure text is above the image */
+}
+
+.top-text {
+  top: 10px; /* Adjusted positioning for top text */
+}
+
+.bottom-text {
+  bottom: 10px; /* Adjusted positioning for bottom text */
+}
+
+.delete-button {
+  margin-top: 10px; /* Adjust margin top as needed for spacing */
+  background-color: red;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #e0eb43;
+}
+
+/* Placeholder color styles */
+/* ::placeholder {
+  background-color: #e0eb43; /* Change to desired color */
+/* } */
+
+input::placeholder {
+  background-color: #e0eb43; /* Change to desired color */
+}
+*/
+
+/* Input field specific styles */
+#imageURL {
+  background-color: #e0eb43; /* Change to desired background color */
+  color: #333; /* Change to desired text color */
+  padding: 10px;
+  border: 1px solid #7d1111;
+  border-radius: 4px;
+}
+
+#imageURL::placeholder {
+  color: #010100; /* Change to desired placeholder text color */
+}
