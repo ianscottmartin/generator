@@ -25,16 +25,17 @@ document.getElementById('memeForm').addEventListener('submit', function (event) 
     }
 
     document.getElementById('memeForm').reset();
+    document.getElementById('imagePreview').src = ''; // Clear the image preview after generating meme
 });
 
 function createMeme(imageURL, topText, bottomText) {
     const memeContainer = document.getElementById('memeContainer');
 
-    const memeContainerItem = document.createElement('div');
-    memeContainerItem.classList.add('meme-container-item');
-
     const memeDiv = document.createElement('div');
-    memeDiv.classList.add('meme');
+    memeDiv.classList.add('meme-container-item');
+
+    const memeImgDiv = document.createElement('div');
+    memeImgDiv.classList.add('meme');
 
     const memeImg = document.createElement('img');
     memeImg.src = imageURL;
@@ -48,20 +49,19 @@ function createMeme(imageURL, topText, bottomText) {
     bottomTextDiv.textContent = bottomText;
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
     deleteButton.classList.add('delete-button');
+    deleteButton.textContent = 'Delete';
     deleteButton.addEventListener('click', function () {
-        memeContainer.removeChild(memeContainerItem); // Remove meme container item when delete button is clicked
+        memeContainer.removeChild(memeDiv);
     });
 
-    memeDiv.appendChild(memeImg);
-    memeDiv.appendChild(topTextDiv);
-    memeDiv.appendChild(bottomTextDiv);
+    memeImgDiv.appendChild(memeImg);
+    memeImgDiv.appendChild(topTextDiv);
+    memeImgDiv.appendChild(bottomTextDiv);
+    memeDiv.appendChild(memeImgDiv);
+    memeDiv.appendChild(deleteButton);
 
-    memeContainerItem.appendChild(memeDiv);
-    memeContainerItem.appendChild(deleteButton); // Append delete button to meme container item (below memeDiv)
-
-    memeContainer.appendChild(memeContainerItem);
+    memeContainer.appendChild(memeDiv);
 }
 
 async function fetchRandomImage() {

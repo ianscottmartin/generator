@@ -31,9 +31,9 @@ body {
   height: auto; /* Maintain aspect ratio */
   display: block;
   margin: 0 auto;
-  max-height: calc(
-    100vh - 300px
-  ); /* Adjusted max-height to fit within viewport */
+  max-height: calc(100vh - 300px);
+  object-fit: contain;
+  /* Adjusted max-height to fit within viewport */
 }
 
 form {
@@ -57,17 +57,20 @@ form {
 }
 
 .meme {
-  position: relative; /* Ensure relative positioning for child elements */
+  position: relative;
   max-width: 100%;
-  max-height: 300px; /* Adjusted maximum height for memes */
+  max-height: 300px;
+  width: 100%;
+  height: 300px;
   overflow: hidden;
-  border: 1px solid #191818;
+  border: 1px solid #ccc;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .meme img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .top-text,
@@ -113,7 +116,6 @@ button {
 input::placeholder {
   background-color: #e0eb43; /* Change to desired color */
 }
-*/
 
 /* Input field specific styles */
 #imageURL {
